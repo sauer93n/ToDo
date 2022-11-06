@@ -33,8 +33,6 @@ class Model
 
     static public function add($data)
     {
-        var_dump($data);
-
         $model = new static;
         $result = $model->execute('INSERT INTO ' . $model->table . '(' . implode(', ', $model->postAttributes) . ')' . ' VALUES (' . implode(', ', $data) . ')');
 

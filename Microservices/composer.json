@@ -1,0 +1,11 @@
+{
+    "name": "todo/todo",
+    "autoload": {
+        "psr-4": {
+            "ToDo\\": "/workspaces/ToDo/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

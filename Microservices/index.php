@@ -2,19 +2,16 @@
 
 namespace ToDo\Microservices;
 
-require_once '../vendor/autoload.php';
+require_once './vendor/autoload.php';
 
-use ToDo\Microservices\Router;
-use ToDo\Microservices\Request;
+use \ToDo\Microservices\Router;
 
-$dotenv = \Dotenv\Dotenv::createUnsafeImmutable(realpath('../'));
+$dotenv = \Dotenv\Dotenv::createUnsafeImmutable(realpath('./'));
 $dotenv->load();
 
-try {
-    header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Methods: GET, POST');
-    header("Access-Control-Allow-Headers: X-Requested-With");
+error_reporting(E_ERROR | E_PARSE);
 
+try {
     $router = Router::getInstance();
 
     $router->get('todos/', 'ToDoController@all');
@@ -23,7 +20,6 @@ try {
     $router->get('todo/delete/', 'ToDoController@delete');
 
     $current_request = $router->getCurrent();
-
 
     $controller_class = $current_request->getController();
 

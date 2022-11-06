@@ -1,6 +1,6 @@
 <?php
 
-namespace ToDo\Controller;
+namespace ToDo\Microservices\Controller;
 
 use ToDo\Microservices\Response;
 use ToDo\Microservices\Request;
